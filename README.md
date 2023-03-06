@@ -1,4 +1,4 @@
-## Usersテーブル
+## usersテーブル
 
 | Column             | Type        | Options                  |
 |:------------------:|------------:|:------------------------:|
@@ -30,7 +30,7 @@
 | user              | references  | null: false, foreign_key: true |
 
 ### Association
-- belong_to :user
+- belongs_to :user
 - has_one   :purchase
 
 ## purchasesテーブル
@@ -41,8 +41,8 @@
 | item              | references    | null: false, foreign_key: true |
 
 ### Association
-- belong_to :user
-- belong_to :item
+- belongs_to :user
+- belongs_to :item
 - has_one   :payment
 
 ## paymentsテーブル
@@ -59,4 +59,4 @@
 
 
 ### Association
-- belong_to :purchase
+- belongs_to :purchase
