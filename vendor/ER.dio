@@ -35,25 +35,34 @@
                     <mxGeometry y="266" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="lGrzhq-W9deMXUlAprRK-14" value="items【商品情報】" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="120" width="200" height="206" as="geometry"/>
+                    <mxGeometry x="600" y="84" width="200" height="296" as="geometry"/>
                 </mxCell>
-                <mxCell id="lGrzhq-W9deMXUlAprRK-15" value="image(active_strage)" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                <mxCell id="4" value="image(active_strage)" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="lGrzhq-W9deMXUlAprRK-14">
                     <mxGeometry y="26" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="lGrzhq-W9deMXUlAprRK-16" value="item_name【商品名】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                <mxCell id="lGrzhq-W9deMXUlAprRK-15" value="price【価格】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
                     <mxGeometry y="56" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="fSsrOqIMTbPt8UFpkI5u-9" value="item_explanation【商品の説明】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                <mxCell id="lGrzhq-W9deMXUlAprRK-16" value="item_name【商品名】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
                     <mxGeometry y="86" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="lGrzhq-W9deMXUlAprRK-18" value="category【カテゴリー】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                <mxCell id="fSsrOqIMTbPt8UFpkI5u-9" value="item_explanation【商品の説明】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
                     <mxGeometry y="116" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="lGrzhq-W9deMXUlAprRK-19" value="description【商品の状態】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                <mxCell id="lGrzhq-W9deMXUlAprRK-18" value="category_id【カテゴリー】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
                     <mxGeometry y="146" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="lGrzhq-W9deMXUlAprRK-20" value="price【価格】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                <mxCell id="lGrzhq-W9deMXUlAprRK-19" value="description_id【商品の状態】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
                     <mxGeometry y="176" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="lGrzhq-W9deMXUlAprRK-20" value="charge_id【配送料】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="lGrzhq-W9deMXUlAprRK-14" vertex="1">
+                    <mxGeometry y="206" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="prefecture_id【発送元】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="lGrzhq-W9deMXUlAprRK-14">
+                    <mxGeometry y="236" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="day_id【日数】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="lGrzhq-W9deMXUlAprRK-14">
+                    <mxGeometry y="266" width="200" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="lGrzhq-W9deMXUlAprRK-38" value="purchases【購入記録】" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="239" y="500" width="191" height="86" as="geometry"/>
@@ -70,7 +79,7 @@
                 <mxCell id="fSsrOqIMTbPt8UFpkI5u-2" value="postcode【郵便番号】" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="fSsrOqIMTbPt8UFpkI5u-1" vertex="1">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="fSsrOqIMTbPt8UFpkI5u-3" value="todouhuken-id" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="fSsrOqIMTbPt8UFpkI5u-1" vertex="1">
+                <mxCell id="fSsrOqIMTbPt8UFpkI5u-3" value="prefecture_id" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="fSsrOqIMTbPt8UFpkI5u-1" vertex="1">
                     <mxGeometry y="56" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="fSsrOqIMTbPt8UFpkI5u-5" value="sityouson" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="fSsrOqIMTbPt8UFpkI5u-1" vertex="1">

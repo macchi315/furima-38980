@@ -1,27 +1,14 @@
-| Left align | Right align | Center align |
-|:-----------|------------:|:------------:|
-| This       |        This |     This     |
-| column     |      column |    column    |
-| will       |        will |     will     |
-| be         |          be |      be      |
-| left       |       right |    center    |
-| aligned    |     aligned |   aligned    |
-
-
-
-
-
 ## Usersテーブル
 
 | Column             | Type        | Options                  |
 |:------------------:|------------:|:------------------------:|
-| nickname           | String      | null: false              |
-| email              | String      | null: false,unique: true |
-| encrypted_password | String      | null: false              |
-| last_name          | String      | null: false              |
-| first_name         | String      | null: false              |
-| last_name_kana     | String      | null: false              |
-| first_name_kana    | String      | null: false              |
+| nickname           | string      | null: false              |
+| email              | string      | null: false,unique: true |
+| encrypted_password | string      | null: false              |
+| last_name          | string      | null: false              |
+| first_name         | string      | null: false              |
+| last_name_kana     | string      | null: false              |
+| first_name_kana    | string      | null: false              |
 | birth              | date        | null: false              |
 
 ### Association
@@ -32,11 +19,14 @@
 
 | Column            | Type        | Options                        |
 |:-----------------:|:-----------:|:------------------------------:|
-| item_name         | String      | null: false                    |
-| item_explanation  | text        | null: false                    |            
-| category          | String      | null: false                    |
-| description       | String      | null: false                    |
 | price             | integer     | null: false                    |
+| item_name         | string      | null: false                    |
+| item_explanation  | text        | null: false                    |            
+| category_id       | integer     | null: false                    |
+| description_id    | integer     | null: false                    |
+| charge_id         | integer     | null: false                    |
+| prefecture_id     | integer     | null: false                    |
+| day_id            | integer     | null: false                    |
 | user              | references  | null: false, foreign_key: true |
 
 ### Association
@@ -60,13 +50,12 @@
 | Column            | Type          | Options                        |
 |:-----------------:|:-------------:|:------------------------------:|
 | postcode          | string        | null: false                    |
-| todouhuken_id     | integer       | null: false                    |
+| prefecture_id     | integer       | null: false                    |
 | sityouson         | string        | null: false                    |
 | banchi            | string        | null: false                    |
 | build_name        | string        |                                |
 | tell_number       | string        | null: false                    |
-| user              | references    | null: false, foreign_key: true |
-| item              | references    | null: false, foreign_key: true |
+| purchase          | references    | null: false, foreign_key: true |
 
 
 ### Association
