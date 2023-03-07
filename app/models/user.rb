@@ -3,17 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+      
+    PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+    validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
+  
   with_options presence: true do
     validates :nickname
-    validates :last_name, format: { with: /[一-龥ぁ-ん]/ }
-    validates :first_name, format: { with: /[一-龥ぁ-ん]/ }
-    validates :last_name_kana, format: { with: /[ァ-ヶ]/ }
-    validates :first_name_kana, format: { with: /[ァ-ヶ]/ }
+    validates :last_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
+    validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
+    validates :last_name_kana, format: { with: /\A[ァ-ヶ]/ }
+    validates :first_name_kana, format: { with: /\A[ァ-ヶ]/ }
     validates :birth
   end
-
-  has_many :items
-  has_many :purchases
 end
-
