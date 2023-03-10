@@ -21,7 +21,7 @@
 |:-----------------:|:-----------:|:------------------------------:|
 | price             | integer     | null: false                    |
 | item_name         | string      | null: false                    |
-| item_explanation  | text        | null: false                    |            
+| item_explanation  | text        | null: false                    |
 | category_id       | integer     | null: false                    |
 | description_id    | integer     | null: false                    |
 | charge_id         | integer     | null: false                    |
