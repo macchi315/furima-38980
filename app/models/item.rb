@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
   validates :image, presence: true
-  validates :price, presence: true, numericality: { in: 300..9999999 }, format: { with: /\d/ }
+  validates :price, presence: true,numericality: {greater_than: 300,less_than: 9999999},format: { with: /\d/ } 
   validates :item_name, presence: true
   validates :item_explanation, presence: true
   validates :category_id, presence: true
