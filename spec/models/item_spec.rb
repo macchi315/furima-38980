@@ -97,7 +97,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('User must exist')
       end
       it '商品説明が空の時は保存できない' do
-        @item.item_explanation = ""
+        @item.item_explanation = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Item explanation can't be blank")
       end
