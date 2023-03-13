@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
     association :user
-    price                 { Faker::Number.between(from: 299, to: 10000000) }
+    price                 { Faker::Number.between(from: 299, to: 10_000_000) }
     item_name             { Faker::Name.initials(number: 2) }
     item_explanation      { Faker::Name.initials(number: 10) }
     category_id           { 2 }
