@@ -130,7 +130,6 @@
 
     <% @items.each do |item| %>
       <li class='list'>
-        <%#= link_to item.image, item_path(item.id) do これだとエラーがでる%>
         <%= link_to item_path(item.id) do %>
         <%#= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%>
         <div class='item-img-content'>
