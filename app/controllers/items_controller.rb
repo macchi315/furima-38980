@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :move_to_login, only: [:new]
+  before_action :move_to_login, only: [:new, :edit]
+  before_action :move_to_index, only: [:edit, :update]
+  before_action :move_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -19,7 +21,17 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -32,6 +44,17 @@ end
 
 def move_to_login
   return if user_signed_in?
-
+  
   redirect_to(new_user_session_path)
+end
+
+def move_to_index
+  @item = Item.find(params[:id])
+  return if user_signed_in? && current_user.id == @item.user_id
+
+  redirect_to action: :index
+end
+
+def move_item
+  @item = Item.find(params[:id])
 end
