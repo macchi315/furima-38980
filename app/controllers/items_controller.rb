@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(item_params) 
+    if @item.update(item_params)
       redirect_to item_path
     else
       render :edit
@@ -46,12 +46,13 @@ end
 
 def move_to_login
   return if user_signed_in?
+
   redirect_to(new_user_session_path)
 end
 
 def move_to_index
   @item = Item.find(params[:id])
-  unless user_signed_in? && current_user.id == @item.user_id
-    redirect_to action: :index
-  end
+  return if user_signed_in? && current_user.id == @item.user_id
+
+  redirect_to action: :index
 end
