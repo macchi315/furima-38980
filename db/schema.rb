@@ -48,24 +48,24 @@ ActiveRecord::Schema.define(version: 2023_03_15_060427) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postcode", null: false
     t.string "sityouson", null: false
     t.string "banchi", null: false
     t.integer "prefecture_id", null: false
-    t.string "build_name", null: false
+    t.string "build_name"
     t.string "tell_number", null: false
-    t.bigint "purchase_id", null: false
+    t.bigint "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["purchase_id"], name: "index_payments_on_purchase_id"
-  end
-
-  create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "item_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_payments_on_order_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,5 +88,5 @@ ActiveRecord::Schema.define(version: 2023_03_15_060427) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
-  add_foreign_key "payments", "purchases"
+  add_foreign_key "payments", "orders"
 end
