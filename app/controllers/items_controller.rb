@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :edit, :destroy]
-  before_action :move_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
@@ -52,13 +52,14 @@ class ItemsController < ApplicationController
     redirect_to(new_user_session_path)
   end
 
-  def move_item
+  def set_item
     @item = Item.find(params[:id])
   end
 
-  def move_to_index
-    return unless current_user.id == @item.user_id && !@item.order.nil?
+  def move_to_index 現在ログインしているユーザーが商品出品者ではないか、商品が既に売られていたらトップページへ遷移
+    if current_user.id != @item.user_id || @item.order != nil
 
     redirect_to items_path
+    end
   end
 end

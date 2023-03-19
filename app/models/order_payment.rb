@@ -9,10 +9,8 @@ class OrderPayment
     validates :postcode, format: { with: /\A\d{3}-\d{4}\z/ }
     validates :sityouson, presence: true
     validates :banchi, presence: true
-    validates :build_name
     validates :tell_number, format: { with: /\A\d{10,11}\z/ }
     validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-    validates :build_name
     validates :token
   end
 

@@ -1,18 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :move_to_item_index, only: [:index]
+  before_action :set_order, only: [:index, :create]
   before_action :sold_out_index, only: [:index]
 
   def index
-    @item = Item.find(params[:item_id])
     @order_payment = OrderPayment.new
   end
 
-  def new
-  end
-
   def create
-    @item = Item.find(params[:item_id])
     @order_payment = OrderPayment.new(order_params)
     if @order_payment.valid?
       pay_item
@@ -25,11 +20,8 @@ class OrdersController < ApplicationController
 
   private
 
-  def move_to_item_index
+  def set_order
     @item = Item.find(params[:item_id])
-    return unless current_user.id == @item.user_id
-
-    redirect_to items_path
   end
 
   def sold_out_index
