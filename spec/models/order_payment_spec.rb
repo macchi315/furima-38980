@@ -22,27 +22,27 @@ RSpec.describe OrderPayment, type: :model do
       it '郵便番号が-無しだと登録できない' do
         @order.postcode = '1234567'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid")
+        expect(@order.errors.full_messages).to include('Postcode is invalid')
       end
       it '郵便番号が全角数字だと登録できない' do
         @order.postcode = '１２３４５６７'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid")
+        expect(@order.errors.full_messages).to include('Postcode is invalid')
       end
       it '郵便番号がひらがなだと登録できない' do
         @order.postcode = 'いちにさんしご'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid")
+        expect(@order.errors.full_messages).to include('Postcode is invalid')
       end
       it '郵便番号が8文字数字だと登録できない' do
         @order.postcode = '123-12345'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid")
+        expect(@order.errors.full_messages).to include('Postcode is invalid')
       end
       it '郵便番号が英語だと登録できない' do
         @order.postcode = 'aaa-aaaa'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid")
+        expect(@order.errors.full_messages).to include('Postcode is invalid')
       end
       it 'prefectureが---では登録できない' do
         @order.prefecture_id = 1

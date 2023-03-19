@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
 
   def move_to_login
     return if user_signed_in?
-    
+
     redirect_to(new_user_session_path)
   end
 
@@ -56,9 +56,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def move_to_index 
-    if current_user.id == @item.user_id && @item.order != nil
+  def move_to_index
+    return unless current_user.id == @item.user_id && !@item.order.nil?
+
     redirect_to items_path
-    end
   end
 end
