@@ -33,9 +33,6 @@
 
     <%= form_with(model: @order_payment, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap', local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-    <%#= form_with model: @donation_address, url: donations_path, local: true do |f| %>
-    <%#= form_with(model: @order_form, url: item_orders_path(@item), id: 'charge-form', class: 'transaction-form-wrap', local: true) do |f| %>
-    <%#= form_with(model: @item, local: true) do |f| ↑urlいらんの？　　%>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>

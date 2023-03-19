@@ -52,13 +52,13 @@ class ItemsController < ApplicationController
     redirect_to(new_user_session_path)
   end
 
-  def move_to_index
-    return if current_user.id == @item.user_id
-    
-    redirect_to action: :index
-  end
-
   def move_item
     @item = Item.find(params[:id])
+  end
+
+  def move_to_index 
+    if current_user.id == @item.user_id && @item.order != nil
+    redirect_to items_path
+    end
   end
 end
