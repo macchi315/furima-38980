@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :edit, :destroy]
-  before_action :move_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
@@ -48,17 +48,18 @@ class ItemsController < ApplicationController
 
   def move_to_login
     return if user_signed_in?
-    
+
     redirect_to(new_user_session_path)
   end
 
-  def move_to_index
-    return if current_user.id == @item.user_id
-    
-    redirect_to action: :index
+  def set_item
+    @item = Item.find(params[:id])
   end
 
-  def move_item
-    @item = Item.find(params[:id])
+  def move_to_index
+    if current_user.id != @item.user_id || @item.order != nil
+
+    redirect_to items_path
+    end
   end
 end
