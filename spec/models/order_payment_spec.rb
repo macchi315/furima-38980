@@ -5,6 +5,7 @@ RSpec.describe OrderPayment, type: :model do
     user = FactoryBot.create(:user)
     item = FactoryBot.create(:item)
     @order_payment = FactoryBot.build(:order_payment, user_id: user.id, item_id: item.id)
+    sleep(0.1) #データベースの処理よりもPが早く動こうとして、テストエラーになる事があるため、sleepを入れています（PC環境により異なる）
   end
 
   describe '配送先情報の保存ができる' do
@@ -91,6 +92,7 @@ RSpec.describe OrderPayment, type: :model do
         expect(@order_payment.errors.full_messages).to include("Tell number is invalid")
       end
       it 'userが紐付いていなければ購入できない' do
+        #@order_payment.user = nil
         @order_payment.user_id = nil
         @order_payment.valid?
         expect(@order_payment.errors.full_messages).to include("User can't be blank")

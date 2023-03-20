@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def move_to_index 現在ログインしているユーザーが商品出品者ではないか、商品が既に売られていたらトップページへ遷移
+  def move_to_index
     if current_user.id != @item.user_id || @item.order != nil
 
     redirect_to items_path
