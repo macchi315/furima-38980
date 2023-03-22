@@ -17,11 +17,11 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :day
   has_one_attached :image
-  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :description_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :charge_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :day_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :category_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :description_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :charge_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :prefecture_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :day_id, numericality: { other_than: 1, message: "を選択してください" }
   belongs_to :user
   has_one :order
 end
